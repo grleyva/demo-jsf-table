@@ -2,7 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+      
     <h:head>
         <title>Facelet Title</title>
     </h:head>
@@ -10,23 +12,19 @@
         <h1>Relación de clientes
             <h:outputLabel  value="#{managedBeanLista.numeroElementos}" />
         </h1>
-        <h:dataTable value="#{managedBeanLista.lista}" var="cliente">            
-            <h:column>
-                <f:facet name="header">NOMBRE</f:facet>
+        <p:dataTable value="#{managedBeanLista.lista}" var="cliente">            
+            <p:column headerText="Nombre">
                 <h:outputLabel value="#{cliente.nombre}" />
-            </h:column>           
-            <h:column>
-                <f:facet name="header">CONTRATO</f:facet>
+            </p:column>           
+            <p:column headerText="Contrato">
                 <h:outputLabel value="#{cliente.contrato}" />
-            </h:column>           
-            <h:column>
-                <f:facet name="header">MARCA</f:facet>
+            </p:column>           
+            <p:column headerText="Marca">
                 <h:outputLabel value="#{cliente.marca}" />
-            </h:column>           
-            <h:column>
-                <f:facet name="header">MODELO</f:facet>
+            </p:column>           
+            <p:column headerText="Modelo">
                 <h:outputLabel value="#{cliente.modelo}" />
-            </h:column>
-        </h:dataTable>
+            </p:column>
+        </p:dataTable>
     </h:body>
 </html>
